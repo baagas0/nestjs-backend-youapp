@@ -73,6 +73,6 @@ export class UpdateUserDto {
   @ApiProperty({ example: 'password123', description: 'User password' })
   @IsString()
   @MinLength(8)
-  @IsNotEmpty()
+  @IsOptional()
   readonly password: string;
 }
