@@ -53,3 +53,9 @@ Make sure youre running properly
 
 [Documentation Swagger](https://localhost:3000/api-docs/#)
 
+## Docker Compose
+To build with docker and running up
+
+```bash
+    docker-compose up --build
+```
