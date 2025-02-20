@@ -41,7 +41,7 @@ export class UserController {
     }
   }
 
-  @Post()
+  @Post('/createProfile')
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth('access-token')
   async createUser(@Res() response, @Body() createUserDto: CreateUserDto) {
@@ -60,7 +60,7 @@ export class UserController {
     }
   }
 
-  @Put('/:id')
+  @Put('/updateProfile/:id')
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth('access-token')
   async updateUser(
@@ -106,7 +106,7 @@ export class UserController {
     }
   }
 
-  @Get('/:id')
+  @Get('/getProfile/:id')
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth('access-token')
   async getUser(@Res() response, @Param('id') userId: string) {

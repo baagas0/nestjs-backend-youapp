@@ -109,7 +109,6 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @SubscribeMessage('getRooms')
   async handleGetRooms(client: Socket) {
     const userId = this.connectedUsers.get(client.id);
-    console.log('userId', userId);
     if (!userId) {
       return { error: 'User not registered' };
     }
