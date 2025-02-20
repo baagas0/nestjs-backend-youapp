@@ -26,9 +26,7 @@ export class UserController {
   @Get('search/:query')
   async searchUsers(@Res() response, @Param('query') query: string) {
     try {
-      console.log('query', query);
       const users = await this.userService.searchUsers(query);
-      console.log('users', users);
       const user = users.length > 0 ? users[0] : undefined;
       return response.status(HttpStatus.OK).json({
         message: 'User found successfully',
